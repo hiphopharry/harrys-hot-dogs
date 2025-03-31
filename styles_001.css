@@ -1,132 +1,177 @@
-
 body {
-    background-color: #f4c2c2; /* Use bright background colors */
-    font-family: Arial, sans-serif; /* Common fonts like Arial or Times New Roman */
-    color: navy; /* Dark text color */
-    margin: 20px;
-    background-image: url('background.gif'); /* Use a tiled background image */
+    background-color: #ffebf3;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('background.gif');
+    background-size: 200px;
 }
 
-h1, h2, h3 {
+h1 {
+    font-size: 4em;
     text-align: center;
-    color: #FF00FF; /* Vibrant headline color */
+    color: #ff00ff;
+    text-shadow: 
+        3px 3px 0 #00ffff,
+        -3px -3px 0 #ffff00;
+    margin: 20px 0;
+    letter-spacing: 2px;
+    animation: rainbow 5s linear infinite;
 }
 
-/* Blinking text effect */
-.blink { 
+h2 {
+    font-size: 3em;
+    color: #00ff00;
+    text-shadow: 
+        2px 2px 0 #ff00ff,
+        -2px -2px 0 #0000ff;
+    margin: 15px 0;
+}
+
+h3 {
+    font-size: 2em;
+    color: #ffff00;
+    text-shadow: 
+        2px 2px 0 #ff0000,
+        -2px -2px 0 #00ffff;
+    margin: 10px 0;
+}
+
+.blink {
+    animation: blinker 1s step-start infinite;
+}
+
 @keyframes blinker {
-    50% {
-        opacity: 0;
-    }
+    50% { opacity: 0; }
 }
 
-/* Your existing CSS styles */
-
-/* Shimmer effect */
 .shimmer-effect {
-  font-size: 3em;
-  background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-  -webkit-background-clip: text;
-  color: transparent;
-  background-size: 500% auto; /* Added background-size */
-  animation: shimmerAnimation 2s infinite linear;
+    font-size: 5em;
+    background: linear-gradient(to right, 
+        red, orange, yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 500% auto;
+    animation: shimmer 3s linear infinite;
+    text-shadow: 
+        4px 4px 0 rgba(0,0,0,0.2),
+        -4px -4px 0 rgba(255,255,255,0.5);
 }
 
-/* Keyframes for shimmer effect */
-@keyframes shimmerAnimation {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: 100% center;
-  }
+@keyframes shimmer {
+    0% { background-position: 0% center; }
+    100% { background-position: 100% center; }
 }
 
 .floating-image {
-    float: left; /* Floats the image to the left */
-    margin: 0 20px 20px 0; /* Provides some space around the image */
+    float: left;
+    margin: 0 20px 20px 0;
+    border: 5px solid #ff00ff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 #00ffff;
 }
 
 .rounded-img {
-      border-radius: 50%; /* This creates a circular shape */
-      /* You can adjust the percentage for different levels of rounding */
-      /* For example, using border-radius: 25% will create a less rounded shape */
-      /* You can also specify exact values like border-radius: 10px; for rounded corners */
-    }
-
+    border-radius: 50%;
+    border: 5px dotted #ffff00;
+    animation: spin 10s linear infinite;
+}
 
 .container {
-  perspective: 1000px;
+    perspective: 1000px;
+    margin: 30px auto;
 }
 
 .giant-word {
-  font-size: 10em;
-  color: transparent;
-  background-image: linear-gradient(45deg, #FF0018, #FFA52C, #FFFF41, #008018, #0000F9, #86007D);
-  background-size: 600%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  animation: spin 10s linear infinite, glimmer 4s ease-in-out infinite;
+    font-size: 8em;
+    color: transparent;
+    background-image: linear-gradient(45deg, 
+        #FF0018, #FFA52C, #FFFF41, #008018, #0000F9, #86007D);
+    background-size: 600%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: 
+        spin 8s linear infinite, 
+        glimmer 3s ease-in-out infinite;
+    text-shadow: 
+        5px 5px 0 rgba(0,0,0,0.2),
+        -5px -5px 0 rgba(255,255,255,0.3);
 }
 
 @keyframes spin {
-  from {
-    transform: rotateY(0);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
+    from { transform: rotateY(0); }
+    to { transform: rotateY(360deg); }
 }
 
 @keyframes glimmer {
-  0%, 100% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 100% 0;
-  }
+    0%, 100% { background-position: 0 0; }
+    50% { background-position: 100% 0; }
 }
 
 #terminal {
-      width: 80%;
-      height: 200px;
-      border: 1px solid #ccc;
-      padding: 10px;
-      overflow: auto;
-}
-
-.content {
-  position: relative; /* Set position to relative to contain absolute elements */
-  z-index: 1; /* Ensure content is behind the explosion element */
-  /* Add any other styles for your content */
+    width: 90%;
+    height: 250px;
+    border: 3px dashed #00ffff;
+    padding: 15px;
+    overflow: auto;
+    background-color: black;
+    color: lime;
+    font-family: monospace;
+    border-radius: 10px;
 }
 
 .explosion {
-  width: 600px;
-  height: 600px;
-  background: url('explosion.gif'); /* Replace 'explosion-image.gif' with your explosion image */
-  background-size: cover;
-  position: center;
-  animation: explode 1s steps(10) forwards;
-  opacity: 0; /* Set the initial opacity to 0 to hide it */
+    width: 600px;
+    height: 600px;
+    background: url('explosion.gif');
+    background-size: cover;
+    position: center;
+    animation: explode 1s steps(10) forwards;
+    opacity: 0;
 }
 
-/* Define the explosion animation */
 @keyframes explode {
-  0% { opacity: 1; transform: scale(0); }
-  100% { opacity: 0; transform: scale(5); }
-}
-.comic-sans {
-  font-family: 'Comic Sans MS', cursive;
-}
-/* Styles for the checkout button */
-.checkoutBtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 5px;
+    0% { opacity: 1; transform: scale(0); }
+    100% { opacity: 0; transform: scale(5); }
 }
 
+.checkoutBtn {
+    background-color: #ff00ff;
+    color: white;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50px;
+    font-size: 1.5em;
+    border: 3px solid #00ffff;
+    box-shadow: 5px 5px 0 #ffff00;
+    transition: all 0.3s;
+}
+
+.checkoutBtn:hover {
+    background-color: #ffff00;
+    color: #ff00ff;
+    transform: scale(1.1);
+}
+
+@keyframes rainbow {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: green; }
+    57% { color: blue; }
+    71% { color: indigo; }
+    85% { color: violet; }
+    100% { color: red; }
+}
+
+.textbox {
+    background-color: rgba(255,255,255,0.8);
+    padding: 20px;
+    border: 5px double #ff00ff;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 8px 8px 0 #00ffff;
+}
