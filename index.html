@@ -1,52 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
-<link href="https://fonts.bunny.net/css?family=press-start-2p:400" rel="stylesheet">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta charset="UTF-8">
+  <title>Harry's Hot Dogs!</title>
 
-    <title>Harry's Hot Dogs!</title>
-    <link rel="stylesheet" href="styles_001.css">
-    <link rel="icon" type="image/png" href="favicon.ico">
-    <style>
-        body {
-            background-image: url('me.jpg');
-            background-repeat: repeat;
-            background-size: 480px 346px;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-        }
-    </style>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.bunny.net/css?family=press-start-2p:400" rel="stylesheet">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon.ico">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="styles_001.css">
+  <style>
+    body {
+      background-image: url('me.jpg');
+      background-repeat: repeat;
+      background-size: 480px 346px;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .minecraft-title-shimmer {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 2em;
+      text-align: center;
+      color: #ff00ff;
+      margin: 20px 0;
+    }
+
+    .section {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 5px double #ff00ff;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      box-shadow: 8px 8px 0 #00ffff;
+    }
+
+    .comic-links {
+      font-family: 'Comic Neue', cursive, sans-serif;
+      font-size: 1.3em;
+    }
+
+    img {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-   <mark> <h1 class="minecraft-title-shimmer">Harry's Hot Dogs!</h1> </mark>
 
+  <h1 class="minecraft-title-shimmer">Harry's Hot Dogs!</h1>
 
+  <div class="section">
+    <h2>About Me</h2>
+    <p>I am Harry!</p>
+    <p id="age"></p>
+    <img src="noFilter.png" width="200" height="200" alt="Me">
+  </div>
 
-    
-    <div class="container" align="center">
-        <table class="textbox" cellpadding="20">
-            <tr>
+  <div class="section comic-links">
+    <h2>LINKS</h2>
+    <p><a href="index.html" style="color: #ff00ff; text-decoration: none;">Home</a></p>
+    <p>~~~~~~~~~~~~~~~</p>
+    <p><a href="https://www.tiktok.com/@hotdogwrestling" target="_blank" style="color: #5dade2; text-decoration: none;">@hotdogwrestling on Tik Tok</a></p>
+    <p><a href="https://soundcloud.com/bigmeeg/sets/best-of-big-meeg-so-far" target="_blank" style="color: #c39bd3; text-decoration: none;">Big Meeg on Soundcloud</a></p>
+    <img src="friendsgif.gif" width="720" height="360" alt="Friends GIF" style="border: 5px dotted #ff00ff;">
+  </div>
 
- <td class="textbox">
-                <h2>About Me</h2>
-                <p>I am Harry!</p>
-            
-  <p id="age"></p>
+  <center>
+    <button class="checkoutBtn blink" onclick="alert('...')">Click here for more!</button>
+  </center>
 
   <script>
     function calculateAge(birthDate) {
       var today = new Date();
-      var birthDate = new Date(birthDate);
-      var age = today.getFullYear() - birthDate.getFullYear();
-      var m = today.getMonth() - birthDate.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      var birth = new Date(birthDate);
+      var age = today.getFullYear() - birth.getFullYear();
+      var m = today.getMonth() - birth.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
         age--;
       }
       return age;
     }
     function updateAge() {
-      var birthDate = '2001-09-26'; // Change this to your birthdate (yyyy-mm-dd)
+      var birthDate = '2001-09-26';
       var age = calculateAge(birthDate);
       document.getElementById('age').innerText = "I am " + age + " years old.";
     }
@@ -54,35 +94,5 @@
     setInterval(updateAge, 1000);
   </script>
 
-                <img src="noFilter.png" width="200" height="200" alt="Spacer Image">
-            </td>
-            <td class="textbox">
-                </td>
-
-
-                
-                <td class="textbox" align="center">
-                    <h2 class="comic-links">LINKS</h2>
-                    <div class="comic-links">
-                        <p><a href="index.html" style="color: #ff00ff; text-decoration: none;">Home</a></p>
-                        <p>~~~~~~~~~~~~~~~</p>
-                        <p><a href="https://www.tiktok.com/@hotdogwrestling" target="_blank" style="color: #5dade2; text-decoration: none;">@hotdogwrestling on Tik Tok</a></p>
-                        <p><a href="https://soundcloud.com/bigmeeg/sets/best-of-big-meeg-so-far" target="_blank" style="color: #c39bd3; text-decoration: none;">Big Meeg on Soundcloud</a></p>
-                    </div>
-                    <img src="friendsgif.gif" width="720" height="360" alt="Animated GIF" style="border: 5px dotted #ff00ff; margin-top: 20px;">
-                </td>
-                <td><table border="1" align="center" cellpadding="10">
-           
-            </tr>
-        </table>
-    </div>
-
-    <center>
-        <button class="checkoutBtn blink" onclick="alert('...')">
-            Click here for more!
-        </button>
-    </center>
-
-    
 </body>
 </html>
