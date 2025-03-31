@@ -18,6 +18,7 @@
       font-family: sans-serif;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
 
     .page-wrapper {
@@ -32,7 +33,6 @@
     .minecraft-title-shimmer {
       font-family: 'Press Start 2P', monospace;
       font-size: 4em;
-      text-align: center;
       background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
       -webkit-background-clip: text;
       background-clip: text;
@@ -41,7 +41,7 @@
       animation: shimmer 3s linear infinite;
       text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2),
                    -4px -4px 0 rgba(255, 255, 255, 0.5);
-      margin-bottom: 40px;
+      margin: 40px 0 10px;
     }
 
     @keyframes shimmer {
@@ -56,12 +56,25 @@
       padding: 30px;
       margin: 30px 0;
       box-shadow: 8px 8px 0 #00ffff;
-      text-align: center;
     }
 
     .comic-links {
       font-family: 'Comic Neue', cursive, sans-serif;
       font-size: 1.3em;
+    }
+
+    .rainbow-text {
+      font-size: 3em;
+      font-family: 'Comic Neue', cursive, sans-serif;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 500% auto;
+      animation: shimmer 3s linear infinite;
+      text-shadow: 2px 2px 0 #ff00ff,
+                   -2px -2px 0 #0000ff;
+      margin: 15px 0;
     }
 
     .checkoutBtn {
@@ -76,36 +89,13 @@
       border: 3px solid #00ffff;
       box-shadow: 5px 5px 0 #ffff00;
       transition: all 0.3s;
-      margin-top: 30px;
+      margin: 40px 0;
     }
 
     .checkoutBtn:hover {
       background-color: #ffff00;
       color: #ff00ff;
       transform: scale(1.1);
-    }
-
-    h1 {
-      font-size: 4em;
-      text-align: center;
-      color: #ff00ff;
-      text-shadow: 
-          3px 3px 0 #00ffff,
-          -3px -3px 0 #ffff00;
-      margin: 20px 0;
-      letter-spacing: 2px;
-      animation: rainbow 5s linear infinite;
-    }
-
-    @keyframes rainbow {
-      0% { color: red; }
-      14% { color: orange; }
-      28% { color: yellow; }
-      42% { color: green; }
-      57% { color: blue; }
-      71% { color: indigo; }
-      85% { color: violet; }
-      100% { color: red; }
     }
 
     .blink {
@@ -116,79 +106,17 @@
       50% { opacity: 0; }
     }
 
-    .floating-image {
-      float: left;
-      margin: 0 20px 20px 0;
-      border: 5px solid #ff00ff;
-      border-radius: 10px;
-      box-shadow: 5px 5px 0 #00ffff;
-    }
-
-    .rounded-img {
-      border-radius: 50%;
-      border: 5px dotted #ffff00;
-      animation: spin 10s linear infinite;
-    }
-
-    @keyframes spin {
-      from { transform: rotateY(0); }
-      to { transform: rotateY(360deg); }
-    }
-
-    .giant-word {
-      font-size: 8em;
-      color: transparent;
-      background-image: linear-gradient(45deg, 
-          #FF0018, #FFA52C, #FFFF41, #008018, #0000F9, #86007D);
-      background-size: 600%;
-      background-clip: text;
-      -webkit-background-clip: text;
-      animation: 
-          spin 8s linear infinite, 
-          glimmer 3s ease-in-out infinite;
-      text-shadow: 
-          5px 5px 0 rgba(0,0,0,0.2),
-          -5px -5px 0 rgba(255,255,255,0.3);
-    }
-
-    @keyframes glimmer {
-      0%, 100% { background-position: 0 0; }
-      50% { background-position: 100% 0; }
-    }
-
-    #terminal {
-      width: 90%;
-      height: 250px;
-      border: 3px dashed #00ffff;
-      padding: 15px;
-      overflow: auto;
-      background-color: black;
-      color: lime;
-      font-family: monospace;
-      border-radius: 10px;
-    }
-
-    .explosion {
-      width: 600px;
-      height: 600px;
-      background: url('explosion.gif');
-      background-size: cover;
-      position: center;
-      animation: explode 1s steps(10) forwards;
-      opacity: 0;
-    }
-
-    @keyframes explode {
-      0% { opacity: 1; transform: scale(0); }
-      100% { opacity: 0; transform: scale(5); }
+    img {
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-  <div class="page-wrapper">
+  <!-- OUTSIDE THE BOX TITLE -->
+  <h1 class="minecraft-title-shimmer">Harry's Hot Dogs!</h1>
 
-    <h1 class="minecraft-title-shimmer">Harry's Hot Dogs!</h1>
+  <div class="page-wrapper">
 
     <div class="section">
       <h2>About Me</h2>
@@ -198,7 +126,7 @@
     </div>
 
     <div class="section comic-links">
-      <h2>LINKS</h2>
+      <h2 class="rainbow-text">LINKS</h2>
       <p><a href="index.html" style="color: #ff00ff; text-decoration: none;">Home</a></p>
       <p>~~~~~~~~~~~~~~~</p>
       <p><a href="https://www.tiktok.com/@hotdogwrestling" target="_blank" style="color: #5dade2; text-decoration: none;">@hotdogwrestling on Tik Tok</a></p>
@@ -206,11 +134,10 @@
       <img src="friendsgif.gif" width="720" height="360" alt="Friends GIF" style="border: 5px dotted #ff00ff;">
     </div>
 
-    <div class="section">
-      <button class="checkoutBtn blink" onclick="alert('...')">Click here for more!</button>
-    </div>
-
   </div>
+
+  <!-- OUTSIDE THE BOX BUTTON -->
+  <button class="checkoutBtn blink" onclick="alert('...')">Click here for more!</button>
 
   <script>
     function calculateAge(birthDate) {
