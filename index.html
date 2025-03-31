@@ -4,14 +4,12 @@
   <meta charset="UTF-8">
   <title>Harry's Hot Dogs!</title>
 
-  <!-- Fonts & Icons -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.bunny.net/css?family=press-start-2p:400" rel="stylesheet">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" href="favicon.ico">
 
-  <!-- Style -->
-  <link rel="stylesheet" href="styles_001.css">
   <style>
     body {
       background-image: url('me.jpg');
@@ -19,25 +17,46 @@
       background-size: 480px 346px;
       font-family: sans-serif;
       margin: 0;
+      padding: 0;
+    }
+
+    .page-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
       padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 10px double #ff00ff;
+      box-shadow: 10px 10px 0 #00ffff;
     }
 
     .minecraft-title-shimmer {
       font-family: 'Press Start 2P', monospace;
-      font-size: 2em;
+      font-size: 4em;
       text-align: center;
-      color: #ff00ff;
-      margin: 20px 0;
+      background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 500% auto;
+      animation: shimmer 3s linear infinite;
+      text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2),
+                   -4px -4px 0 rgba(255, 255, 255, 0.5);
+      margin-bottom: 40px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 100% center; }
     }
 
     .section {
       background-color: rgba(255, 255, 255, 0.8);
       border: 5px double #ff00ff;
       border-radius: 15px;
-      padding: 20px;
-      margin: 20px auto;
-      width: 80%;
+      padding: 30px;
+      margin: 30px 0;
       box-shadow: 8px 8px 0 #00ffff;
+      text-align: center;
     }
 
     .comic-links {
@@ -45,34 +64,153 @@
       font-size: 1.3em;
     }
 
-    img {
-      margin-top: 20px;
+    .checkoutBtn {
+      background-color: #ff00ff;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 50px;
+      font-size: 1.5em;
+      border: 3px solid #00ffff;
+      box-shadow: 5px 5px 0 #ffff00;
+      transition: all 0.3s;
+      margin-top: 30px;
+    }
+
+    .checkoutBtn:hover {
+      background-color: #ffff00;
+      color: #ff00ff;
+      transform: scale(1.1);
+    }
+
+    h1 {
+      font-size: 4em;
+      text-align: center;
+      color: #ff00ff;
+      text-shadow: 
+          3px 3px 0 #00ffff,
+          -3px -3px 0 #ffff00;
+      margin: 20px 0;
+      letter-spacing: 2px;
+      animation: rainbow 5s linear infinite;
+    }
+
+    @keyframes rainbow {
+      0% { color: red; }
+      14% { color: orange; }
+      28% { color: yellow; }
+      42% { color: green; }
+      57% { color: blue; }
+      71% { color: indigo; }
+      85% { color: violet; }
+      100% { color: red; }
+    }
+
+    .blink {
+      animation: blinker 1s step-start infinite;
+    }
+
+    @keyframes blinker {
+      50% { opacity: 0; }
+    }
+
+    .floating-image {
+      float: left;
+      margin: 0 20px 20px 0;
+      border: 5px solid #ff00ff;
+      border-radius: 10px;
+      box-shadow: 5px 5px 0 #00ffff;
+    }
+
+    .rounded-img {
+      border-radius: 50%;
+      border: 5px dotted #ffff00;
+      animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotateY(0); }
+      to { transform: rotateY(360deg); }
+    }
+
+    .giant-word {
+      font-size: 8em;
+      color: transparent;
+      background-image: linear-gradient(45deg, 
+          #FF0018, #FFA52C, #FFFF41, #008018, #0000F9, #86007D);
+      background-size: 600%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: 
+          spin 8s linear infinite, 
+          glimmer 3s ease-in-out infinite;
+      text-shadow: 
+          5px 5px 0 rgba(0,0,0,0.2),
+          -5px -5px 0 rgba(255,255,255,0.3);
+    }
+
+    @keyframes glimmer {
+      0%, 100% { background-position: 0 0; }
+      50% { background-position: 100% 0; }
+    }
+
+    #terminal {
+      width: 90%;
+      height: 250px;
+      border: 3px dashed #00ffff;
+      padding: 15px;
+      overflow: auto;
+      background-color: black;
+      color: lime;
+      font-family: monospace;
+      border-radius: 10px;
+    }
+
+    .explosion {
+      width: 600px;
+      height: 600px;
+      background: url('explosion.gif');
+      background-size: cover;
+      position: center;
+      animation: explode 1s steps(10) forwards;
+      opacity: 0;
+    }
+
+    @keyframes explode {
+      0% { opacity: 1; transform: scale(0); }
+      100% { opacity: 0; transform: scale(5); }
     }
   </style>
 </head>
 <body>
 
-  <h1 class="minecraft-title-shimmer">Harry's Hot Dogs!</h1>
+  <div class="page-wrapper">
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>I am Harry!</p>
-    <p id="age"></p>
-    <img src="noFilter.png" width="200" height="200" alt="Me">
+    <h1 class="minecraft-title-shimmer">Harry's Hot Dogs!</h1>
+
+    <div class="section">
+      <h2>About Me</h2>
+      <p>I am Harry!</p>
+      <p id="age"></p>
+      <img src="noFilter.png" width="200" height="200" alt="Me">
+    </div>
+
+    <div class="section comic-links">
+      <h2>LINKS</h2>
+      <p><a href="index.html" style="color: #ff00ff; text-decoration: none;">Home</a></p>
+      <p>~~~~~~~~~~~~~~~</p>
+      <p><a href="https://www.tiktok.com/@hotdogwrestling" target="_blank" style="color: #5dade2; text-decoration: none;">@hotdogwrestling on Tik Tok</a></p>
+      <p><a href="https://soundcloud.com/bigmeeg/sets/best-of-big-meeg-so-far" target="_blank" style="color: #c39bd3; text-decoration: none;">Big Meeg on Soundcloud</a></p>
+      <img src="friendsgif.gif" width="720" height="360" alt="Friends GIF" style="border: 5px dotted #ff00ff;">
+    </div>
+
+    <div class="section">
+      <button class="checkoutBtn blink" onclick="alert('...')">Click here for more!</button>
+    </div>
+
   </div>
-
-  <div class="section comic-links">
-    <h2>LINKS</h2>
-    <p><a href="index.html" style="color: #ff00ff; text-decoration: none;">Home</a></p>
-    <p>~~~~~~~~~~~~~~~</p>
-    <p><a href="https://www.tiktok.com/@hotdogwrestling" target="_blank" style="color: #5dade2; text-decoration: none;">@hotdogwrestling on Tik Tok</a></p>
-    <p><a href="https://soundcloud.com/bigmeeg/sets/best-of-big-meeg-so-far" target="_blank" style="color: #c39bd3; text-decoration: none;">Big Meeg on Soundcloud</a></p>
-    <img src="friendsgif.gif" width="720" height="360" alt="Friends GIF" style="border: 5px dotted #ff00ff;">
-  </div>
-
-  <center>
-    <button class="checkoutBtn blink" onclick="alert('...')">Click here for more!</button>
-  </center>
 
   <script>
     function calculateAge(birthDate) {
@@ -85,11 +223,13 @@
       }
       return age;
     }
+
     function updateAge() {
       var birthDate = '2001-09-26';
       var age = calculateAge(birthDate);
       document.getElementById('age').innerText = "I am " + age + " years old.";
     }
+
     updateAge();
     setInterval(updateAge, 1000);
   </script>
