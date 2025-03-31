@@ -189,3 +189,36 @@ h3 {
     margin: 20px 0;
     box-shadow: 8px 8px 0 #00ffff;
 }
+
+.minecraft-title-shimmer {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 2em;
+    text-align: center;
+    background: linear-gradient(
+        to right,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 500% auto;
+    animation: shimmer 3s linear infinite;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2),
+                 -4px -4px 0 rgba(255, 255, 255, 0.5);
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 100% center;
+    }
+}
+
