@@ -1,31 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</link>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Harry's Hot Dogs</title>
-  <style>
-    body {
-      background-color: #fffbe6;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding-top: 100px;
-    }
+    <meta charset="UTF-8">
+    <title>Harry's Hot Dogs!</title>
+    <link rel="stylesheet" href="styles_001.css">
+    <link rel="icon" type="image/png" href="favicon.ico">
 
-    h1 {
-      color: #cc0000;
-    }
+<style>
+        body {
+            /* Set the background image */
+            background-image: url('putimagehere.PNG');
+            /* Set the background to repeat both vertically and horizontally */
+            background-repeat: repeat;
+            background-size: 360px 640px;
+        }
 
-    p {
-      font-size: 1.2em;
-      color: #444;
-    }
-  </style>
+        td.textbox {
+            background-color: #f2f2f2; /* Solid background color for text boxes */
+            padding: 10px; /* Adjust padding as needed */
+            border: 1px solid #ccc; /* Border style */
+            /* Add more styling properties as needed */
+        }
+    </style>
+
+
+
 </head>
 <body>
-  <h1>Welcome to Harry's Hot Dogs!</h1>
-  <p>This site is under construction 🍴🌭</p>
+    <h1 class="shimmer-effect">Title</h1>
+    <table border="1" align="center" cellpadding="10">
+        <tr>
+            <td class="textbox">
+                <h1>Header</h1>
+
+
+
+
+
+
+        </tr>
+           <tr>
+              <td class="textbox" colspan="2" align="center">
+                <h2>Links</h2>
+                <p><a href="index.html">Home</a></p>
+                <p><a id="randomLink" href="#">Random</a></p>
+                <p>------------------------</p>
+                <p>Off Site Links vvvvv</p>
+                <p><a href="https://www.tiktok.com/@hotdogwrestling" target="_blank">@hotdogwrestling on Tik Tok</a></p>
+                <p><a href="https://soundcloud.com/bigmeeg/sets/best-of-big-meeg-so-far" target="_blank">Big Meeg on Soundcloud</a></p>
+                <img src="friendsgif.gif" width="720" height="360" alt="Animated GIF">
+            </td>
+        </tr>
+    </table>
+
+    <script src="randomLink.js"></script>
+
+</script>
+
+         <h3 class="blink">Click here for more!</h3>
+    <script>
+        // Example of JavaScript (commonly used for simple effects)
+        document.querySelector('.blink').addEventListener('click', () => {
+            alert('blank');
+        });
+    </script>
 </body>
 </html>
+
