@@ -1,10 +1,24 @@
 body {
-    background-color: #ffebf3;
-    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-image: url('me.jpg');
+    background-repeat: repeat;
+    background-size: 480px 346px;
+    font-family: sans-serif;
     margin: 0;
-    padding: 20px;
-    background-image: url('background.gif');
-    background-size: 200px;
+    padding: 0;
+}
+
+.minecraft-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 2.2em;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #ff00ff;
+    margin-top: 40px;
+}
+
+.comic-links {
+    font-family: 'Comic Neue', cursive, sans-serif;
+    font-size: 1.3em;
 }
 
 h1 {
