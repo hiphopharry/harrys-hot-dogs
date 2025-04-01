@@ -109,6 +109,18 @@
     img {
       margin-top: 20px;
     }
+
+    .row-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .small-box {
+      width: 300px;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -125,53 +137,59 @@
   <h1 class="minecraft-title-shimmer" style="margin: 0;">Harry's Hot Dogs!</h1>
 </div>
 
+<div class="page-wrapper">
 
-
-  <div class="page-wrapper">
-
-    <div class="section">
+  <!-- Two side-by-side boxes -->
+  <div class="row-boxes">
+    <div class="section small-box">
       <h2><mark>About Me</mark></h2>
       <p>I am Harry!</p>
       <p id="age"></p>
       <img src="harrymirrorcartoon.PNG" width="170" height="256" alt="Cartoon Harry in the Mirror">
-
     </div>
 
-    <div class="section comic-links">
-      <h2 class="rainbow-text">LINKS</h2>
-      <p><a href="index.html" style="color: #ff00ff; text-decoration: none;">Home</a></p>
-      <p>~~~~~~~~~~~~~~~</p>
-      <p><a href="https://www.tiktok.com/@hotdogwrestling" target="_blank" style="color: #2e86c1; text-decoration: none;">@hotdogwrestling on Tik Tok</a></p>
-      <p><a href="https://soundcloud.com/bigmeeg/sets/best-of-big-meeg-so-far" target="_blank" style="color: #a569bd; text-decoration: none;">Big Meeg on Soundcloud</a></p>
-      <img src="friendsgif.gif" width="720" height="360" alt="Friends GIF" style="border: 5px dotted #ff00ff;">
+    <div class="section small-box">
+      <h2><mark>More Info</mark></h2>
+      <p>This is another box you can use for updates, jokes, dreams, or whatever 🌭</p>
     </div>
-
   </div>
 
-  <!-- OUTSIDE THE BOX BUTTON -->
-  <button class="checkoutBtn blink" onclick="alert('...')">Click here for more!</button>
+  <!-- LINKS box -->
+  <div class="section comic-links">
+    <h2 class="rainbow-text">LINKS</h2>
+    <p><a href="index.html" style="color: #ff00ff; text-decoration: none;">Home</a></p>
+    <p>~~~~~~~~~~~~~~~</p>
+    <p><a href="https://www.tiktok.com/@hotdogwrestling" target="_blank" style="color: #2e86c1; text-decoration: none;">@hotdogwrestling on Tik Tok</a></p>
+    <p><a href="https://soundcloud.com/bigmeeg/sets/best-of-big-meeg-so-far" target="_blank" style="color: #a569bd; text-decoration: none;">Big Meeg on Soundcloud</a></p>
+    <img src="friendsgif.gif" width="720" height="360" alt="Friends GIF" style="border: 5px dotted #ff00ff;">
+  </div>
 
-  <script>
-    function calculateAge(birthDate) {
-      var today = new Date();
-      var birth = new Date(birthDate);
-      var age = today.getFullYear() - birth.getFullYear();
-      var m = today.getMonth() - birth.getMonth();
-      if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
-        age--;
-      }
-      return age;
+</div>
+
+<!-- OUTSIDE THE BOX BUTTON -->
+<button class="checkoutBtn blink" onclick="alert('...')">Click here for more!</button>
+
+<script>
+  function calculateAge(birthDate) {
+    var today = new Date();
+    var birth = new Date(birthDate);
+    var age = today.getFullYear() - birth.getFullYear();
+    var m = today.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+      age--;
     }
+    return age;
+  }
 
-    function updateAge() {
-      var birthDate = '2001-09-26';
-      var age = calculateAge(birthDate);
-      document.getElementById('age').innerText = "I am " + age + " years old.";
-    }
+  function updateAge() {
+    var birthDate = '2001-09-26';
+    var age = calculateAge(birthDate);
+    document.getElementById('age').innerText = "I am " + age + " years old.";
+  }
 
-    updateAge();
-    setInterval(updateAge, 1000);
-  </script>
+  updateAge();
+  setInterval(updateAge, 1000);
+</script>
 
 </body>
 </html>
