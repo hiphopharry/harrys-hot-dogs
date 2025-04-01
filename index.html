@@ -51,20 +51,29 @@
       100% { background-position: 100% center; }
     }
 
-    .section {
-      background-color: rgba(255, 255, 255, 0.8);
-      border: 5px double #ff00ff;
-      border-radius: 15px;
-      padding: 30px;
-      margin: 30px 0;
-      box-shadow: 8px 8px 0 #00ffff;
-    }
+  .section {
+  display: inline-block; 
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 5px double #ff00ff;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 30px auto;
+  box-shadow: 8px 8px 0 #00ffff;
+  text-align: center;
+}
+.comic-links {
+  display: inline-block; 
+  text-align: left;
+}
 
-    .comic-links {
-      font-family: 'Comic Neue', cursive, sans-serif;
-      font-size: 1.3em;
-    }
-
+.row-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  text-align: left;
+}
+    
     .rainbow-text {
       font-size: 3em;
       font-family: 'Comic Neue', cursive, sans-serif;
